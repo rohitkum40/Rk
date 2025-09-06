@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beauturex - Sexual Wellness Products</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background: #fdfdfd;
+      color: #333;
+    }
+
+    header {
+      background: #b3124b;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 20px 0;
+      color: #b3124b;
+    }
+
+    .product-gallery {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .product-gallery img {
+      width: 200px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
+
+    .review {
+      background: #fff;
+      border: 1px solid #ddd;
+      margin: 10px auto;
+      padding: 15px;
+      width: 60%;
+      border-radius: 8px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
+
+    #enquiry {
+      background: #f7f7f7;
+      padding: 20px;
+    }
+
+    form {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    input, textarea, button {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background: #b3124b;
+      color: white;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    button:hover {
+      background: #8e0f39;
+    }
+
+    #cta {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: #b3124b;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      margin: 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .cta-btn.whatsapp {
+      background: #25d366;
+    }
+
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Beauturex</h1>
+    <p>Your Trusted Sexual Wellness Partner</p>
+  </header>
+
+  <!-- Products Section -->
+  <section id="products">
+    <h2>Our Products</h2>
+    <div class="product-gallery">
+      <img src="https://via.placeholder.com/200" alt="Product 1">
+      <img src="https://via.placeholder.com/200" alt="Product 2">
+      <img src="https://via.placeholder.com/200" alt="Product 3">
+    </div>
+  </section>
+
+  <!-- Reviews Section -->
+  <section id="reviews">
+    <h2>Customer Reviews</h2>
+    <div class="review">
+      <p>"Best product I have ever used. Highly recommended!"</p>
+      <span>- Rahul</span>
+    </div>
+    <div class="review">
+      <p>"Packaging was discreet, quality is awesome."</p>
+      <span>- Sameer</span>
+    </div>
+  </section>
+
+  <!-- Enquiry Form -->
+  <section id="enquiry">
+    <h2>Enquiry Form</h2>
+    <form name="enquiry-form" id="enquiryForm" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="tel" name="phone" placeholder="Your Phone" required>
+      <textarea name="message" placeholder="Your Enquiry" required></textarea>
+      <button type="submit" a href="thankyou.html">Submit</button>
+    </form>
+    <p id="formMsg"></p>
+  </section>
+
+  <!-- Call to Action -->
+  <section id="cta">
+    <h2>Need Help?</h2>
+    <a href="tel:+918471033094" class="cta-btn">📞 Call Now</a>
+    <a href="https://wa.me/918471033094" class="cta-btn whatsapp">💬 WhatsApp</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Beauturex | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwzAze_6caH0F0B6EbKok7lJSWQZLKRiWy4zE2y7b_Hnz4D2jJw2dYl6NFulG_fsPja/exec';
+    const form = document.getElementById('enquiryForm');
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+          document.getElementById('formMsg').textContent = "Thanks for Contacting us..! We Will Contact You Soon...";
+          form.reset();
+        })
+        .catch(error => console.error('Error!', error.message));
+        window.location.href = "thankyou.html";
+    });
+  </script>
+
+  </body>
+</html>
